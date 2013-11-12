@@ -1,10 +1,13 @@
-<div >
+
+<div id="main" class="main">
+	<div class="notes-inputs">
 	<mymenu></mymenu>
-	<div>
-		<input type="button" ng-click="update()" value="update">
-		<input type="button" ng-click="insert()" value="insert">
-		<input type="text" ng-model="inTitle" />
-		<textarea ng-model="inText"></textarea>
+		<input class="main-button" type="button" ng-click="update()" value="update">
+		<input class="main-button" type="button" ng-click="insert()" value="insert">
+		</br>
+		<input class="main-text title-text" type="text" ng-model="inTitle" />
+		</br>
+		<textarea class="main-textarea title-textarea" ng-model="inText"></textarea>
 	</div>
 	<myitems></myitems>
 </div>

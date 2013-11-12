@@ -1,6 +1,16 @@
 'use strict';
-
 angular.module('angularJSAppApp')
-	.controller('ShowCtrl', function ($scope, todos) {
-		$scope.items = todos.get();
+	.controller('ShowCtrl', function ($scope, storage) {
+        var defAry=[];
+        storage.bind($scope,'items', {defaultValue: defAry ,storeName: 'todoAPP'});
+        $scope.grids = {
+            data: 'items',
+            enableCellSelection: true,
+            enableRowSelection: false,
+            enableCellEdit: true,
+            columnDefs: [
+                {field:'title', displayName: 'タイトル', enableCellEdit: false},
+                {field:'text', displayName:'内容', enableCellEdit: true}
+            ]
+        };
 	});

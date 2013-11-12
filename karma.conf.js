@@ -11,12 +11,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/scripts/*.js',
-      'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+        'app/bower_components/ng-grid/lib/jquery-1.9.1.js',
+        'app/bower_components/angular/angular.js',
+        'app/bower_components/ng-grid/lib/angular-resource-1.0.6.js',
+        'app/bower_components/ng-grid/ng-grid-2.0.7.debug.js',
+        'app/bower_components/angular-cookies/angular-cookies.js',
+        'app/bower_components/angularLocalStorage/src/angularLocalStorage.js',
+        'app/bower_components/angular-mocks/angular-mocks.js',
+        'app/scripts/*.js',
+        'app/scripts/**/*.js',
+        //'test/mock/**/*.js',
+        'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude

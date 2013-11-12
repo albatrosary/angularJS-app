@@ -10,11 +10,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.min.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-</head>
+      <style >
+        .gridStyle {
+            border: 1px solid rgb(212,212,212);
+            width:  100%;
+            height: 300px;
+        }
+      </style>
+
+  </head>
   <body ng-app="angularJSAppApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -39,9 +47,22 @@
        ga('send', 'pageview');
     </script>
 
+    <!-- ng-grids -->
+    <script src="bower_components/ng-grid/lib/jquery-1.9.1.js"></script>
 
     <script src="bower_components/angular/angular.js"></script>
 
+    <!-- ng-grids -->
+    <script src="bower_components/ng-grid/lib/angular-resource-1.0.6.js"></script>
+    <script src="bower_components/ng-grid/ng-grid-2.0.7.debug.js"></script>
+
+    <!-- ng-localstrage -->
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angularLocalStorage/src/angularLocalStorage.js"></script>
+
+<!--
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+-->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
