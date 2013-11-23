@@ -6,6 +6,30 @@ body
  background:
   color: #ccc
 
+.bnt-delete
+ font:
+  size: 16px
+  weight: normal
+  family: Arial
+ border: 1px solid #d83526
+  radius: 23px
+ padding: 2px 6px
+ text-decoration: none
+ background-color: #fa665a
+ color: #ffffff
+ display: inline-block
+ box-shadow: inset 1px 1px 0px 0px #fab3ad
+ &:focus, &:hover
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #d34639), color-stop(100%, #fa665a) )
+  background: -moz-linear-gradient( center top, #d34639 5%, #fa665a 100% )
+  background: -ms-linear-gradient( top, #d34639 5%, #fa665a 100% )
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d34639', endColorstr='#fa665a')
+  background-color: #d34639
+ &:active
+  position: relative
+  top: 1px
+
+
 footer
  text-align: center
  padding: 35px 0px 0px 0px

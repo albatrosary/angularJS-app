@@ -1,35 +1,51 @@
 'use strict';
 
-angular.module('angularJSAppApp', ['ngCookies','angularLocalStorage', 'ngGrid'])
+angular.module('angularJSAppApp', ['ngCookies','angularLocalStorage', 'ngGrid','ngWebsocket'])
 	.config(function ($routeProvider) {
 		$routeProvider
-			.when('/', { templateUrl: 'views/main.html', controller: 'MainCtrl' })
+			.when('/main', { templateUrl: 'views/main.html', controller: 'MainCtrl' })
+            .when('/main2', { templateUrl: 'views/main2.html', controller: 'MainCtrl2' })
 			.when('/show', {templateUrl:'views/show.html', controller : 'ShowCtrl'})
-			.otherwise({ redirectTo: '/' });
+			.otherwise({ redirectTo: '/main' });
 	})
 	.directive('mymenu', function(){
 		return {
 			restrict:'E',
-			template :  '<div class="menu">' +
-				'<a class="menu-item" href="#/show">一覧</a>' +
-				'<a class="menu-item" href="#/">作成</a>' +
-				'</div>'
+			templateUrl : 'template/mymenu.html'
 		}
 	})
-	.directive('myitems', function(){
-		return {
-			restrict : 'E',
-			template : '<ul class="notes-lists" >' +
-				'<li class="notes-entry" ng-repeat="todo in items" ng-click="selector(todo)">' +
-				'{{todo.title}}' +
-				'<span ng-click="delete(todo)">[X]</span>' +
-				'</li>' +
-				'</ul>'
-		}
-	})
-	.directive('mylist', function(){
-		return {
-			restrict : 'E',
-			template : '</br><div class="gridStyle" ng-grid="grids"></div>'
-		}
-	});
+    .directive('myfooter', function(){
+        return {
+            restrict : 'E',
+            templateUrl : 'template/myfooter.html'
+        }
+    })
+    .directive('ngEnterfocus', function () {
+        return function (scope, element, attrs) {
+            element.bind("keydown keypress", function (event) {
+                if(event.which === 13) {
+                    scope.$apply(function (){
+                        angular.element("#" + attrs.ngEnterfocus).focus();
+                    });
+                    event.preventDefault();
+                }
+            });
+        };
+    })
+    .directive('myitems', function(){
+        return {
+            restrict : 'E',
+            template : '<ul class="notes-lists" >' +
+                '<li class="notes-entry" ng-repeat="todo in items" ng-click="selector(todo)">' +
+                '{{todo.title}}' +
+                '<span class="bnt-delete" ng-click="delete(todo)">x</span>' +
+                '</li>' +
+                '</ul>'
+        }
+    })
+    .directive('mylist', function(){
+        return {
+            restrict : 'E',
+            template : '</br><div class="gridStyle" ng-grid="grids"></div>'
+        }
+    });

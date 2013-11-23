@@ -1,13 +1,19 @@
 
-<div id="main" class="main">
+<div id="main" class="main" ng-init="connect()">
 	<div class="notes-inputs">
-	<mymenu></mymenu>
-		<input class="main-button" type="button" ng-click="update()" value="update">
-		<input class="main-button" type="button" ng-click="insert()" value="insert">
-		</br>
-		<input class="main-text title-text" type="text" ng-model="inTitle" />
-		</br>
-		<textarea class="main-textarea title-textarea" ng-model="inText"></textarea>
+		<mymenu></mymenu>
+        <input class="main-button" type="button" ng-click="update()" value="update">
+        <input class="main-button" type="button" ng-click="insert()" value="insert">
+        <input class="main-button" type="button" ng-click="deleteALL()" value="delete(ALL)">
+        </br>
+        <input id="title" class="main-text title-text" type="text" ng-model="inTitle"
+               ng-Enterfocus="text" placeholder="Put the title" />
+        </br>
+        <textarea id="text" class="main-textarea title-textarea" ng-model="inText"
+                  placeholder="What needs to be done?" ng-maxlength="140"></textarea>
+        </br>
+        {{140-inText.length}}
 	</div>
 	<myitems></myitems>
 </div>
+<myfooter></myfooter>

@@ -1,0 +1,25 @@
+
+<div id="main" class="main">
+	<div class="notes-inputs">
+		<mymenu></mymenu>
+        <form name="myForm" novalidate ng-submit="insert()">
+            </br>
+            <input name="title" class="main-text title-text" type="text" ng-model="inTitle"
+                    placeholder="Put the title"
+                    required ng-maxlength="10" ng-minlength="1"/>
+            <span ng-show="myForm.title.$error.required">required!</span>
+            <span ng-show="myForm.title.$error.maxlength">Over!</span>
+            <span ng-show="myForm.title.$error.minlength">min size</span>
+            <textarea name="text" class="main-textarea title-textarea" ng-model="inText"
+                    placeholder="What needs to be done?"
+                    ng-maxlength="140"></textarea>
+            </br>
+            <span ng-hide="myForm.text.$error.maxlength">len:{{140-inText.length}}</span>
+            <span ng-show="myForm.text.$error.maxlength">Over! </span>
+            <input id="insert" class="main-button" type="submit" value="insert">
+        </form>
+
+	</div>
+	<myitems></myitems>
+</div>
+<myfooter></myfooter>
